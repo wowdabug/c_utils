@@ -25,8 +25,13 @@ const unsigned long long facts[] = {
 };
 
 unsigned long long perm(unsigned int n, unsigned int r) {
-	if (r > n) { return 0; }
-	if (r == 0) { return 1; }
+	if (r > n) {
+		return 0;
+	}
+
+	if (r == 0) {
+		return 1;
+	}
 
 	unsigned long long x = 1;
 
@@ -38,9 +43,17 @@ unsigned long long perm(unsigned int n, unsigned int r) {
 }
 
 unsigned long long comb(unsigned int n, unsigned int r) {
-	if (r > n) { return 0; }
-	if (r == 0 || r == n) { return 1; }
-	if (r > n - r) { r = n - r; }
+	if (r > n) {
+		return 0;
+	}
+
+	if (r == 0 || r == n) {
+		return 1;
+	}
+
+	if (r > n - r) {
+		r = n - r;
+	}
 
 	unsigned long long x = 1;
 

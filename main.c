@@ -1,6 +1,7 @@
 #include "wint.h"
 #include "wmath.h"
 #include "wvec.h"
+#include "wcolor.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -24,10 +25,23 @@ void test_wvec(void) {
 	print_vec(&v);
 }
 
+void test_wcolor(void) {
+	RGB rgb = {0};
+	if (hex_to_rgb("#FF0000", &rgb)) {
+		print_color(&rgb);
+	}
+
+	RGBA rgba = {0};
+	if (hex_to_rgba("#FF000000", &rgba)) {
+		print_color(&rgba);
+	}
+}
+
 int main(void) {
 	test_wint();
 	test_wmath();
 	test_wvec();
+	test_wcolor();
 
 	return EXIT_SUCCESS;
 }

@@ -1,3 +1,15 @@
-- rand
-- hash
-- color
+Color:
+	- rgb to hex
+	- rgba to hex
+	- rgb to rgba
+	- rgba to rgb
+	- rgb to hsv
+	- hsv to rgb
+	- rgb to hsl
+	- hsl to rgb
+	- hsv to hsl
+	- hsl to hsv
+
+Rand:
+
+Hash:
