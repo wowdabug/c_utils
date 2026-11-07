@@ -1,4 +1,4 @@
-#include "wdbmath.h"
+#include "wmath.h"
 
 const unsigned long long factorials[] = {
 	1,

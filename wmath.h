@@ -1,5 +1,7 @@
-#ifndef WDBMATH_H
-#define WDBMATH_H
+#ifndef WMATH_H
+#define WMATH_H
+
+#include <math.h>
 
 #define E 2.7182818284590452
 #define EULER_GAMMA 0.57721566490153286
@@ -32,12 +34,18 @@
 #define SGN(X) (((X) > 0) - ((X) < 0))
 
 #define sgn(X) _Generic((X), \
-	int: isgn, \
-	long: lisgn, \
-	long long: llisgn, \
-	float: fsgn, \
-	double: dsgn, \
-	long double: ldsgn \
+	int: sgni, \
+	long: sgnl, \
+	long long: sgnll, \
+	float: sgnf, \
+	double: sgnd, \
+	long double: sgnld \
+)(X)
+
+#define sigm(X) _Generic((X), \
+	float: sigmf, \
+	double: sigmd, \
+	long double: sigmld \
 )(X)
 
 extern const unsigned long long factorials[];
@@ -45,13 +53,44 @@ extern const unsigned long long factorials[];
 unsigned long long perm(unsigned int n, unsigned int r);
 unsigned long long comb(unsigned int n, unsigned int r);
 
-static inline unsigned long long factorial(unsigned int x) { return factorials[x]; }
+static inline unsigned long long fact(unsigned int x) {
+	return factorials[x];
+}
 
-static inline int isgn(int x) { return (x > 0) - (x < 0); }
-static inline int lisgn(long x) { return (x > 0) - (x < 0); }
-static inline int llisgn(long long x) { return (x > 0) - (x < 0); }
-static inline int fsgn(float x) { return (x > 0) - (x < 0); }
-static inline int dsgn(double x) { return (x > 0) - (x < 0); }
-static inline int ldsgn(long double x) { return (x > 0) - (x < 0); }
+static inline int sgni(int x) {
+	return (x > 0) - (x < 0);
+}
+
+static inline int sgnl(long x) {
+	return (x > 0L) - (x < 0L);
+}
+
+static inline int sgnll(long long x) {
+	return (x > 0LL) - (x < 0LL);
+}
+
+static inline int sgnf(float x) {
+	return (x > 0.0f) - (x < 0.0f);
+}
+
+static inline int sgnd(double x) {
+	return (x > 0.0) - (x < 0.0);
+}
+
+static inline int sgnld(long double x) {
+	return (x > 0.0L) - (x < 0.0L);
+}
+
+static inline float sigmf(float x) {
+	return 1.0f / (1.0f + exp(-x));
+}
+
+static inline double sigmd(double x) {
+	return 1.0 / (1.0 + exp(-x));
+}
+
+static inline long double sigmld(long double x) {
+	return 1.0L / (1.0L + exp(-x));
+}
 
 #endif

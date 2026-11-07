@@ -1,5 +1,5 @@
-#ifndef WDBINT_H
-#define WDBINT_H
+#ifndef WINT_H
+#define WINT_H
 
 #include <stdint.h>
 #include <stddef.h>

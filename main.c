@@ -1,14 +1,33 @@
+#include "wint.h"
+#include "wmath.h"
+#include "wvec.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "wdbint.h"
-#include "wdbmath.h"
+void test_wint(void) {
+	i32 x = 5;
+
+	printf("The value of x is: %d\n", x);
+	printf("The size of x is %zu bytes.\n", sizeof(x));
+}
+
+void test_wmath(void) {
+	printf("The value of pi is: %.3f\n", PI);
+	printf("The factorial of 7 is: %llu\n", fact(7));
+	printf("nPc(6, 4) = %llu\n", comb(6, 4));
+	printf("The sign of 2.5 is: %d\n", sgn(2.5));
+}
+
+void test_wvec(void) {
+	Vec2 v = {0};
+	print_vec(&v);
+}
 
 int main(void) {
-	printf("%s%.3f\n", "The value of pi is: ", PI);
-	printf("%s%llu\n", "The factorial of 7 is: ", factorial(7));
-	printf("%s%llu%s\n", "There are ", comb(6, 4), " combinations when choosing 4 items from 6");
-	printf("%s%d\n", "The sign of 2.5 is: ", sgn(2.5));
+	test_wint();
+	test_wmath();
+	test_wvec();
 
 	return EXIT_SUCCESS;
 }

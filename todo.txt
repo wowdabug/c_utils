@@ -1,2 +1,3 @@
-- floats
-- random
+- rand
+- hash
+- color
