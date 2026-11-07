@@ -1,6 +1,6 @@
 #include "wmath.h"
 
-const unsigned long long factorials[] = {
+const unsigned long long facts[] = {
 	1,
 	1,
 	2,
@@ -28,9 +28,9 @@ unsigned long long perm(unsigned int n, unsigned int r) {
 	if (r > n) { return 0; }
 	if (r == 0) { return 1; }
 
-	unsigned long long x = 1;
+	unsigned long long x = 1ULL;
 
-	for (unsigned int i = 0; i < r; ++i) {
+	for (unsigned int i = 0u; i < r; ++i) {
         x *= n - i;
     }
 
@@ -42,10 +42,10 @@ unsigned long long comb(unsigned int n, unsigned int r) {
 	if (r == 0 || r == n) { return 1; }
 	if (r > n - r) { r = n - r; }
 
-	unsigned long long x = 1;
+	unsigned long long x = 1ULL;
 
-    for (unsigned int i = 1; i <= r; i++) {
-        x = x * (n - i + 1) / i;
+    for (unsigned int i = 1u; i <= r; i++) {
+        x = x * (n - i + 1u) / i;
     }
 
     return x;

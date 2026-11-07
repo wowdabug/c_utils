@@ -31,8 +31,6 @@
 #define SQRT_3 1.7320508075688772
 #define SQRT_5 2.2360679774997896
 
-#define SGN(X) (((X) > 0) - ((X) < 0))
-
 #define sgn(X) _Generic((X), \
 	int: sgni, \
 	long: sgnl, \
@@ -48,13 +46,13 @@
 	long double: sigmld \
 )(X)
 
-extern const unsigned long long factorials[];
+extern const unsigned long long facts[];
 
 unsigned long long perm(unsigned int n, unsigned int r);
 unsigned long long comb(unsigned int n, unsigned int r);
 
 static inline unsigned long long fact(unsigned int x) {
-	return factorials[x];
+	return facts[x];
 }
 
 static inline int sgni(int x) {
