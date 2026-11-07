@@ -14,23 +14,23 @@ const unsigned long long facts[] = {
 	3628800,
 	39916800,
 	479001600,
-	6227020800,
-	87178291200,
-	1307674368000,
-	20922789888000,
-	355687428096000,
-	6402373705728000,
-	121645100408832000,
-	2432902008176640000
+	6227020800ULL,
+	87178291200ULL,
+	1307674368000ULL,
+	20922789888000ULL,
+	355687428096000ULL,
+	6402373705728000ULL,
+	121645100408832000ULL,
+	2432902008176640000ULL
 };
 
 unsigned long long perm(unsigned int n, unsigned int r) {
 	if (r > n) { return 0; }
 	if (r == 0) { return 1; }
 
-	unsigned long long x = 1ULL;
+	unsigned long long x = 1;
 
-	for (unsigned int i = 0u; i < r; ++i) {
+	for (unsigned int i = 0; i < r; ++i) {
         x *= n - i;
     }
 
@@ -42,10 +42,10 @@ unsigned long long comb(unsigned int n, unsigned int r) {
 	if (r == 0 || r == n) { return 1; }
 	if (r > n - r) { r = n - r; }
 
-	unsigned long long x = 1ULL;
+	unsigned long long x = 1;
 
-    for (unsigned int i = 1u; i <= r; i++) {
-        x = x * (n - i + 1u) / i;
+    for (unsigned int i = 1; i <= r; i++) {
+        x = x * (n - i + 1) / i;
     }
 
     return x;
