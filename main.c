@@ -2,6 +2,7 @@
 #include "wmath.h"
 #include "wvec.h"
 #include "wcolor.h"
+#include "wver.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -37,11 +38,16 @@ void test_wcolor(void) {
 	}
 }
 
+void test_wver(void) {
+	printf("The current C version is %d.\n", C_VERSION);
+}
+
 int main(void) {
 	test_wint();
 	test_wmath();
 	test_wvec();
 	test_wcolor();
+	test_wver();
 
 	return EXIT_SUCCESS;
 }
