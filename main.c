@@ -3,6 +3,7 @@
 #include "wvec.h"
 #include "wcolor.h"
 #include "wver.h"
+#include "warr.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -39,7 +40,19 @@ void test_wcolor(void) {
 }
 
 void test_wver(void) {
-	printf("The current C version is %d.\n", C_VERSION);
+	printf("The current C version is from %d.\n", C_VERSION);
+}
+
+void test_warr(void) {
+	Arr arr;
+	init_arr(&arr);
+
+	push(&arr, 1);
+	print_arr(&arr);
+	pop(&arr);
+	print_arr(&arr);
+
+	free_arr(&arr);
 }
 
 int main(void) {
@@ -48,6 +61,7 @@ int main(void) {
 	test_wvec();
 	test_wcolor();
 	test_wver();
+	test_warr();
 
 	return EXIT_SUCCESS;
 }

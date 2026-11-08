@@ -1,4 +1,5 @@
 Color:
+	- adj return values
 	- rgb to hex
 	- rgba to hex
 	- rgb to rgba
@@ -10,7 +11,10 @@ Color:
 	- hsv to hsl
 	- hsl to hsv
 
-Ver:
+Arr:
+	- generics
+
+Err:
 
 Rand:
 
