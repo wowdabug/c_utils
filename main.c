@@ -8,6 +8,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#define STRINGIFY_IMPL(X) #X
+#define STRINGIFY(X) STRINGIFY_IMPL(X)
+
 void test_wint(void) {
 	i32 x = 5;
 
@@ -40,7 +43,7 @@ void test_wcolor(void) {
 }
 
 void test_wver(void) {
-	printf("The current C version is from %d.\n", C_VERSION);
+	puts("The current C version is C" STRINGIFY(C_VERSION_YEAR_SHORT) ".");
 }
 
 void test_warr(void) {

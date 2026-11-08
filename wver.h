@@ -3,22 +3,38 @@
 
 #ifndef __STDC_VERSION__
 	#ifdef __STDC__
-		#define C_VERSION 1990
+		#define C_VERSION_YEAR 1990
+		#define C_VERSION_YEAR_SHORT 90
+		#define C_VERSION_MONTH 0
 	#else
-		#define C_VERSION 1978
+		#define C_VERSION_YEAR 1979
+		#define C_VERSION_YEAR_SHORT 79
+		#define C_VERSION_MONTH 0
 	#endif
 #elif __STDC_VERSION__ == 199409L
-	#define C_VERSION 1994
+	#define C_VERSION_YEAR 1994
+	#define C_VERSION_YEAR_SHORT 94
+	#define C_VERSION_MONTH 9
 #elif __STDC_VERSION__ == 199901L
-	#define C_VERSION 1999
+	#define C_VERSION_YEAR 1999
+	#define C_VERSION_YEAR_SHORT 99
+	#define C_VERSION_MONTH 1
 #elif __STDC_VERSION__ == 201112L
-	#define C_VERSION 2011
+	#define C_VERSION_YEAR 2011
+	#define C_VERSION_YEAR_SHORT 11
+	#define C_VERSION_MONTH 12
 #elif __STDC_VERSION__ == 201710L
-	#define C_VERSION 2017
+	#define C_VERSION_YEAR 2017
+	#define C_VERSION_YEAR_SHORT 17
+	#define C_VERSION_MONTH 10
 #elif __STDC_VERSION__ == 202311L
-	#define C_VERSION 2023
+	#define C_VERSION_YEAR 2023
+	#define C_VERSION_YEAR_SHORT 23
+	#define C_VERSION_MONTH 11
 #else
-	#define C_VERSION 2029
+	#define C_VERSION_YEAR 2029
+	#define C_VERSION_YEAR_SHORT 29
+	#define C_VERSION_MONTH 0
 #endif
 
 #endif
